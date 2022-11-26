@@ -5,7 +5,7 @@ const multer = require("multer");
 const UploadController = require("../src/app/controller/UploadController");
 // setup multer for file upload
 const storage = multer.diskStorage({
-  destination: "../../express-vercel/src/build",
+  destination: "./src/build",
   filename: function (req, file, cb) {
     cb(null, file.originalname);
   },
