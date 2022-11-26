@@ -1,11 +1,10 @@
 const express = require("express");
 const product = require("./api/product");
 const app = express();
-const db = require("./src/configs/dbConfig");
+const db = require("./configs/dbConfig");
 const path = require("path");
 app.use(express.json({ extended: false }));
-app.use("/build", express.static(path.join(__dirname + "/src/build")));
-
+app.use("/build", express.static(path.join(__dirname + "/build/")));
 app.use("/", product);
 db.connect();
 
