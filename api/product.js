@@ -5,7 +5,7 @@ const multer = require("multer");
 const UploadController = require("../app/controller/UploadController");
 // setup multer for file upload
 const storage = multer.diskStorage({
-  destination: "./build",
+  destination: "/var/task/build",
   filename: function (req, file, cb) {
     cb(null, file.originalname);
   },
