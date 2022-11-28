@@ -19,8 +19,6 @@ class MusicController {
       .save()
       .then(() => {
         console.log("create new playlist success");
-        res.header("Access-Control-Allow-Origin", "*");
-        res.sendStatus(200);
       })
       .catch(next);
   }
