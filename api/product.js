@@ -13,16 +13,16 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage: storage });
 router.post("/api/uploads", upload.single("myFile"), (req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
   UploadController.createPlaylist(req, res, next);
   console.log(req.file.originalname + " file successfully uploaded !!");
-  res.header("Access-Control-Allow-Origin", "*");
   res.sendStatus(200);
 });
 
 router.get("/api/uploads", (req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
   UploadController.APIMusic(req, res, next);
   res.sendStatus(200);
-  res.header("Access-Control-Allow-Origin", "*");
 });
 
 module.exports = router;
