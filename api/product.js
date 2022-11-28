@@ -22,7 +22,6 @@ router.post("/api/uploads", upload.single("myFile"), (req, res, next) => {
 router.get("/api/uploads", (req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
   UploadController.APIMusic(req, res, next);
-  res.sendStatus(200);
 });
 
 module.exports = router;
