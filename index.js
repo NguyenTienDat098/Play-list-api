@@ -5,7 +5,7 @@ const db = require("./configs/dbConfig");
 const path = require("path");
 db.connect();
 app.use(express.json({ extended: false }));
-app.use("/build", express.static(path.join(__dirname + "/build/")));
+app.use("/tmp", express.static(path.join(__dirname + "/tmp/")));
 app.use("/", product);
 
 const PORT = process.env.PORT || 8080;
