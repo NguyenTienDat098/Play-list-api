@@ -19,6 +19,8 @@ router.post("/api/uploads", upload.single("myFile"), (req, res, next) => {
 });
 
 router.get("/api/uploads", (req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.sendStatus(200);
   UploadController.APIMusic(req, res, next);
 });
 
